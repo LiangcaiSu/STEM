@@ -3,13 +3,12 @@
 
 The open source code for "STEM: Unleashing the Power of Embeddings for Multi-Task Recommendation" presented at AAAI 2024.
 
-**This code repository is under construction, please stay tuned!**
+🚧 **This code repository is under construction, please stay tuned!**
 
 ## Getting Started
 ### Data Preparation
 #### Tiktok 
 Step 1. Please download the dataset ```final_track1_train.txt.tgz``` of IEEE ICME 2019 Grand Challenge Track 1 to the directory ```data/TiktokLarge/raw_data```.
-
 Step 2. Then, run the data preprocessing script as follows.
 ```bash
 cd data/TiktokLarge
