@@ -1,4 +1,4 @@
-# STEM
+# STEM: Unleashing the Power of Embeddings for Multi-Task Recommendation
 ![logo](assets/image.png)
 
 The open source code for "STEM: Unleashing the Power of Embeddings for Multi-Task Recommendation" presented at AAAI 2024.
@@ -35,6 +35,20 @@ If you have any problem about this implementation, please create an issue or sen
 ### Citation
 
 If you find our code or propcessed data helpful in your research, please kindly cite the following papers.
+
+> @article{AAAI24_STEM,
+  author       = {Liangcai Su and
+                  Junwei Pan and
+                  Ximei Wang and
+                  Xi Xiao and
+                  Shijie Quan and
+                  Xihua Chen and
+                  Jie Jiang},
+  title        = {{STEM:} Unleashing the Power of Embeddings for Multi-task Recommendation},
+  journal={Proceedings of the 38-th AAAI Conference on Artificial Intelligence (AAAA 2024)}
+  year         = {2024},
+}
+
 
 > Liangcai Su, Junwei Pan, Ximei Wang, Xi Xiao, Shijie Quan, Xihua Chen, Jie Jiang. [STEM: Unleashing the Power of Embeddings for Multi-task Recommendation](https://arxiv.org/abs/2308.13537). [[Bibtex](https://dblp.org/rec/journals/corr/abs-2308-13537.html?view=bibtex)]
 
