@@ -1,0 +1,15 @@
+TiktokLarge:
+  data_root: ./data/TiktokLarge
+  data_format: csv
+  train_data: ./data/TiktokLarge/train.csv
+  valid_data: ./data/TiktokLarge/valid.csv
+  test_data: ./data/TiktokLarge/test.csv
+  min_categr_count: 10
+  feature_cols:
+    [ { name: ['uid', 'item_id', 'author_id', 'item_city',
+              'channel', 'music_id', 'device_id', 'video_duration'],
+        active: True, dtype: str, type: categorical } ]
+  label_col: [ { name: finish, dtype: float },
+                { name: like, dtype: float } ]
+  group_id: 'uid'
+

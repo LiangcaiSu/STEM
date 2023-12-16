@@ -28,11 +28,11 @@ You can train a STEM model by running the following script.
 python run_expid.py --expid STEM_TiktokLarge --config ./config --gpu 0 
 ```
 
-### Concat 
+## Concat 
 If you have any problem about this implementation, please create an issue or send us an Email at: 
 - sulc21@mails.tsinghua.edu.cn (Liangcai Su)
 
-### Citation
+## Citation
 
 If you find our code or propcessed data helpful in your research, please kindly cite the following papers.
 ```

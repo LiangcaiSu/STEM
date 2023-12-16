@@ -1,0 +1,315 @@
+Base: 
+    model_root: './checkpoints'
+    num_workers: 3
+    verbose: 1
+    early_stop_patience: 1
+    pickle_feature_encoder: True
+    save_best_only: True
+    eval_steps: null
+    debug_mode: False
+    group_id: null
+    use_features: null
+    feature_specs: null
+    feature_config: null
+
+SharedBottom_TiktokLarge_finish:
+    model: SharedBottom
+    dataset_id: TiktokLarge
+    task_labels: ['finish']
+    loss: ['binary_crossentropy']
+    metrics: ['logloss', 'AUC', 'gAUC']
+    task: ['binary_classification']
+    num_tasks: 1
+    optimizer: adam
+    learning_rate: 1.e-4
+    bottom_hidden_units: [512,512,512]
+    tower_hidden_units: [128, 128]
+    hidden_activations: relu
+    net_regularizer: 0
+    embedding_regularizer: 1.e-6
+    batch_norm: False
+    net_dropout: 0
+    batch_size: 4096
+    embedding_dim: 16
+    epochs: 20
+    shuffle: True
+    seed: 2023
+    monitor: 'AUC'
+    monitor_mode: 'max'
+    group_id: 'uid'
+   
+SharedBottom_TiktokLarge_like:
+    model: SharedBottom
+    dataset_id: TiktokLarge
+    loss: ['binary_crossentropy']
+    metrics: ['logloss', 'AUC', 'gAUC']
+    task: ['binary_classification']
+    task_labels: ['like']
+    num_tasks: 1
+    optimizer: adam
+    learning_rate: 1.e-4
+    bottom_hidden_units: [512,512,512]
+    tower_hidden_units: [128, 128]
+    hidden_activations: relu
+    net_regularizer: 0
+    embedding_regularizer: 1.e-6
+    batch_norm: False
+    net_dropout: 0
+    batch_size: 4096
+    embedding_dim: 16
+    epochs: 20
+    shuffle: True
+    seed: 2023
+    monitor: 'AUC'
+    monitor_mode: 'max'
+    group_id: 'uid'
+
+SharedBottom_TiktokLarge:
+    model: SharedBottom
+    dataset_id: TiktokLarge
+    loss: ['binary_crossentropy','binary_crossentropy']
+    metrics: ['logloss', 'AUC', 'gAUC']
+    task: ['binary_classification','binary_classification']
+    num_tasks: 2
+    optimizer: adam
+    learning_rate: 1.e-4
+    bottom_hidden_units: [512,512,512]
+    tower_hidden_units: [128, 128]
+    hidden_activations: relu
+    net_regularizer: 0
+    embedding_regularizer: 1.e-6
+    batch_norm: False
+    net_dropout: 0
+    batch_size: 4096
+    embedding_dim: 16
+    epochs: 20
+    shuffle: True
+    seed: 2023
+    monitor: 'AUC'
+    monitor_mode: 'max'
+    group_id: 'uid'
+
+
+OMoE_TiktokLarge:
+    model: OMoE
+    dataset_id: TiktokLarge
+    loss: ['binary_crossentropy','binary_crossentropy']
+    metrics: ['logloss', 'AUC', 'gAUC']
+    task: ['binary_classification','binary_classification']
+    num_tasks: 2
+    optimizer: adam
+    learning_rate: 1.e-4
+    num_experts: 8
+    expert_hidden_units: [512,512,512]
+    gate_hidden_units: [128, 64]
+    tower_hidden_units: [128, 64]
+    hidden_activations: relu
+    net_regularizer: 0
+    embedding_regularizer: 1.e-6
+    batch_norm: False
+    net_dropout: 0
+    batch_size: 4096
+    embedding_dim: 16
+    epochs: 20
+    shuffle: True
+    seed: 2023
+    monitor: 'AUC'
+    monitor_mode: 'max'
+    group_id: 'uid'
+
+
+MMoE_TiktokLarge:
+    model: MMoE
+    dataset_id: TiktokLarge
+    loss: ['binary_crossentropy','binary_crossentropy']
+    metrics: ['logloss', 'AUC', 'gAUC']
+    task: ['binary_classification','binary_classification']
+    num_tasks: 2
+    optimizer: adam
+    learning_rate: 1.e-4
+    num_experts: 8
+    expert_hidden_units: [512,512,512]
+    gate_hidden_units: [128, 64]
+    tower_hidden_units: [128, 64]
+    hidden_activations: relu
+    net_regularizer: 0
+    embedding_regularizer: 1.e-6
+    batch_norm: False
+    net_dropout: 0
+    batch_size: 4096
+    embedding_dim: 16
+    epochs: 20
+    shuffle: True
+    seed: 2023
+    monitor: 'AUC'
+    monitor_mode: 'max'
+    group_id: 'uid'
+
+
+PLE_TiktokLarge:
+    model: PLE
+    dataset_id: TiktokLarge
+    loss: ['binary_crossentropy','binary_crossentropy']
+    metrics: ['logloss', 'AUC', 'gAUC']
+    task: ['binary_classification','binary_classification']
+    num_tasks: 2
+    optimizer: adam
+    learning_rate: 1.e-4
+    num_layers: 1 
+    num_workers: 4
+    num_shared_experts: 8
+    num_specific_experts: 1
+    expert_hidden_units: [512,512,512]
+    gate_hidden_units: [128, 64]
+    tower_hidden_units: [128, 64]
+    hidden_activations: relu
+    net_regularizer: 0
+    embedding_regularizer: 1.e-6
+    batch_norm: False
+    net_dropout: 0
+    batch_size: 4096
+    embedding_dim: 16
+    epochs: 20
+    shuffle: True
+    seed: 2023
+    monitor: 'AUC'
+    monitor_mode: 'max'
+    group_id: 'uid'
+
+AITM_TiktokLarge:
+    model: AITM
+    dataset_id: TiktokLarge
+    loss: ['binary_crossentropy','binary_crossentropy']
+    metrics: ['logloss', 'AUC', 'gAUC']
+    task: ['binary_classification','binary_classification']
+    num_tasks: 2
+    optimizer: adam
+    learning_rate: 1.e-4
+    bottom_hidden_units: [512,512,512]
+    tower_hidden_units: [128, 128]
+    hidden_activations: relu
+    net_regularizer: 0
+    embedding_regularizer: 1.e-6
+    batch_norm: False
+    net_dropout: 0
+    batch_size: 4096
+    embedding_dim: 16
+    epochs: 20
+    shuffle: True
+    seed: 2023
+    monitor: 'AUC'
+    monitor_mode: 'max'
+    group_id: 'uid'
+
+
+ESMM_TiktokLarge:
+    model: ESMM
+    dataset_id: TiktokLarge
+    loss: ['binary_crossentropy','binary_crossentropy']
+    metrics: ['logloss', 'AUC']
+    task: ['binary_classification','binary_classification']
+    num_tasks: 2
+    optimizer: adam
+    learning_rate: 1.e-4
+    tower_hidden_units: [512, 512, 512]
+    hidden_activations: relu
+    net_regularizer: 0
+    embedding_regularizer: 1.e-6
+    batch_norm: False
+    net_dropout: 0
+    batch_size: 4096
+    embedding_dim: 16
+    epochs: 50
+    shuffle: True
+    seed: 2023
+    monitor: 'AUC'
+    monitor_mode: 'max'
+
+
+
+MMoE_ME_TiktokLarge:
+    model: MMoE_ME
+    dataset_id: TiktokLarge
+    loss: ['binary_crossentropy','binary_crossentropy']
+    metrics: ['logloss', 'AUC', 'gAUC']
+    task: ['binary_classification','binary_classification']
+    num_tasks: 2
+    optimizer: adam
+    learning_rate: 1.e-4
+    num_experts: 8
+    expert_hidden_units: [512,512,512]
+    gate_hidden_units: [128, 64]
+    tower_hidden_units: [128, 64]
+    hidden_activations: relu
+    net_regularizer: 0
+    embedding_regularizer: 1.e-6
+    batch_norm: False
+    net_dropout: 0
+    batch_size: 4096
+    embedding_dim: 16
+    epochs: 20
+    shuffle: True
+    seed: 2023
+    monitor: 'AUC'
+    monitor_mode: 'max'
+    group_id: 'uid'
+
+
+PLE_ME_TiktokLarge:
+    model: PLE_ME
+    dataset_id: TiktokLarge
+    loss: ['binary_crossentropy','binary_crossentropy']
+    metrics: ['logloss', 'AUC', 'gAUC']
+    task: ['binary_classification','binary_classification']
+    num_tasks: 2
+    optimizer: adam
+    learning_rate: 1.e-4
+    num_layers: 1 
+    num_workers: 4
+    num_shared_experts: 8
+    num_specific_experts: 1
+    expert_hidden_units: [512,512,512]
+    gate_hidden_units: [128, 64]
+    tower_hidden_units: [128, 64]
+    hidden_activations: relu
+    net_regularizer: 0
+    embedding_regularizer: 1.e-6
+    batch_norm: False
+    net_dropout: 0
+    batch_size: 4096
+    embedding_dim: 16
+    epochs: 20
+    shuffle: True
+    seed: 2023
+    monitor: 'AUC'
+    monitor_mode: 'max'
+    group_id: 'uid'
+
+STEM_TiktokLarge:
+    model: STEM
+    dataset_id: TiktokLarge
+    loss: ['binary_crossentropy','binary_crossentropy']
+    metrics: ['logloss', 'AUC', 'gAUC']
+    task: ['binary_classification','binary_classification']
+    num_tasks: 2
+    optimizer: adam
+    learning_rate: 1.e-3
+    num_layers: 1 
+    num_shared_experts: 8
+    num_specific_experts: 1
+    expert_hidden_units: [512,512,512]
+    gate_hidden_units: [128, 64]
+    tower_hidden_units: [128, 64]
+    hidden_activations: relu
+    net_regularizer: 0
+    embedding_regularizer: 1.e-6
+    batch_norm: False
+    net_dropout: 0
+    batch_size: 4096
+    embedding_dim: 16
+    epochs: 20
+    shuffle: True
+    seed: 2023
+    monitor: 'AUC'
+    monitor_mode: 'max'
+    group_id: 'uid'
