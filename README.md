@@ -1,7 +1,8 @@
 # STEM: Unleashing the Power of Embeddings for Multi-Task Recommendation
 ![logo](assets/image.png)
 
-The open source code for "STEM: Unleashing the Power of Embeddings for Multi-Task Recommendation" presented at AAAI 2024.
+The open source code for "[STEM: Unleashing the Power of Embeddings for Multi-Task Recommendation](https://arxiv.org/abs/2308.13537)" presented at AAAI 2024.
+
 
 🚧 **This code repository is under construction, please stay tuned!**
 
@@ -9,13 +10,17 @@ The open source code for "STEM: Unleashing the Power of Embeddings for Multi-Tas
 ### Data Preparation
 #### Tiktok 
 Step 1. Please download the dataset ```final_track1_train.txt.tgz``` of IEEE ICME 2019 Grand Challenge Track 1 to the directory ```data/TiktokLarge/raw_data```.
+
 Step 2. Then, run the data preprocessing script as follows.
-```bash
+```sh
 cd data/TiktokLarge
+# Please put final_track1_train.txt under ./raw_data
+# or modify the data set path in preprocess.py
 python preprocess.py
 ```
 
 ### Reproduce Steps
+
 In the next steps, we assume that the directory is ```src```.
 
 #### Model and Dataset Configuration
@@ -23,8 +28,22 @@ We provided available model configuration file ```model_config.yaml``` and data 
 
 #### Reproduce the model performance
 You can train a STEM model by running the following script.
-```bash
+```sh
 python run_expid.py --expid STEM_TiktokLarge --config ./config --gpu 0 
+```
+For better performance, we provide the tuner to automatically search for optimal hyperparameters. For example, 
+```sh 
+# Please modify TiktokLarge_STEM_tuner.yaml to adjust the search space
+python run_param_tuner.py --config ./config/tuner/TiktokLarge_STEM_tuner.yaml --gpu 0 1 
+```
+We also provide baseline implementations for comparing model performance. For example, 
+```sh
+# Shared-Bottom
+python run_expid.py --expid SharedBottom_TiktokLarge --config ./config --gpu 0 
+# MMoE
+python run_expid.py --expid MMoE_TiktokLarge --config ./config --gpu 0 
+# PLE
+python run_expid.py --expid PLE_TiktokLarge --config ./config --gpu 0 
 ```
 
 ## Concat 
@@ -34,7 +53,7 @@ If you have any problem about this implementation, please create an issue or sen
 ## Citation
 
 If you find our code or propcessed data helpful in your research, please kindly cite the following papers.
-```
+```bibtex
 @article{AAAI24_STEM,
   author       = {Liangcai Su and
                   Junwei Pan and
@@ -44,7 +63,7 @@ If you find our code or propcessed data helpful in your research, please kindly 
                   Xihua Chen and
                   Jie Jiang},
   title        = {{STEM:} Unleashing the Power of Embeddings for Multi-task Recommendation},
-  journal={Proceedings of the 38-th AAAI Conference on Artificial Intelligence (AAAA 2024)}
+  journal={Proceedings of the 38-th AAAI Conference on Artificial Intelligence (AAAI 2024)}
   year         = {2024},
 }
 ```
