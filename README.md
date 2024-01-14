@@ -5,11 +5,13 @@ The open source code for "[STEM: Unleashing the Power of Embeddings for Multi-Ta
 
 
 🚧 **This code repository is under construction, please stay tuned!**
+## Model Overview
+![overview](assets/overview.png)
 
 ## Getting Started
 ### Data Preparation
 #### Tiktok 
-Step 1. Please download the dataset ```final_track1_train.txt.tgz``` of IEEE ICME 2019 Grand Challenge Track 1 to the directory ```data/TiktokLarge/raw_data```.
+Step 1. Please download the dataset ```final_track1_train.txt.tgz``` of IEEE ICME 2019 Grand Challenge Track 1 to the directory ```data/TiktokLarge/raw_data```. You can download the original dataset from [BaiduNetDisk](https://pan.baidu.com/s/1ktHIHVx6mJqKnZCNcvQ41w)(password:tk1c). Kindly be informed that the usage of this dataset is restricted to academic research purposes exclusively and it must not be utilized for any commercial or illegal activities. 
 
 Step 2. Then, run the data preprocessing script as follows.
 ```sh
