@@ -48,7 +48,7 @@ python run_expid.py --expid MMoE_TiktokLarge --config ./config --gpu 0
 python run_expid.py --expid PLE_TiktokLarge --config ./config --gpu 0 
 ```
 
-## Concat 
+## Contact
 If you have any problem about this implementation, please create an issue or send us an Email at: 
 - sulc21@mails.tsinghua.edu.cn (Liangcai Su)
 
